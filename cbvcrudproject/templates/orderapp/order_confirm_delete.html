@@ -1,0 +1,16 @@
+{% extends "orderapp/base.html" %}
+   {% block child_head %}
+     <title>delete order</title>
+   {% endblock %}
+   {% block child_body %}
+     <div class="container" align="center">
+       <div class="jumbotron" style="margin-top:15%">
+         <h3>Please Confirm do you want to delete "{{order.name|upper}}" order</h3>
+         <br>
+         <form method="post">
+          <input type="submit" value="delete" class="btn btn-danger">&nbsp&nbsp&nbsp<a href="/{{order.id}}" class="btn btn-success">Cancel</a>
+          {% csrf_token %}
+         </form>
+       </div>
+      </div>
+    {% endblock %}

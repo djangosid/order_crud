@@ -1,0 +1,16 @@
+{% extends "orderapp/base.html" %}
+  {% block child_head %}
+    <title>Add Order</title>
+  {% endblock %}
+  {% block child_body %}
+    <div class="container" align="center">
+      <div class="jumbotron">
+        <h1>New Order</h1>
+      </div>
+      <form method="post">
+        {{form.as_p}}
+        {% csrf_token %}
+        <input type="submit" value="add/update">
+      </form>
+    </div>
+  {% endblock %}

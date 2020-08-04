@@ -1,0 +1,32 @@
+{% extends "orderapp/base.html" %}
+  {% block child_head %}
+    <title>order detail</title>
+  {% endblock %}
+
+  {% block child_body %}
+    <div class="container" align="center">
+     <div class="jumbotron">
+       <h1>{{order.name|title}} order details</h1>
+    </div>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <td>order</td>
+          <td>price</td>
+          <td>quantity</td>
+          <td>payment mode</td>
+        </tr>
+      </thead>
+      <tbody>
+         <tr>
+           <td>{{order.name}}</td>
+           <td>{{order.price}}</td>
+           <td>{{order.quantity}}</td>
+           <td>{{order.payment}}</td>
+         </tr>
+      </tbody>
+    </table>
+    <br>
+    <a href="/" class="btn btn-default">Home</a>
+    </div>
+  {% endblock %}

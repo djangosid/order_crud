@@ -1,0 +1,32 @@
+{% extends "orderapp/base.html" %}
+   {% block child_head %}
+     <title>order list</title>
+  {% endblock %}
+  {% block child_body %}
+     <div class="container" align="center">
+       <div class="jumbotron">
+         <h1>Order List</h1>
+       </div>
+     {% if order_list %}
+     <table class="table table-hovered">
+        <thead>
+          <tr>
+            <td>Order</td>
+            <td>Action</td>
+          <tr>
+        </thead>
+        <tbody>
+          {% for ol in order_list %}
+          <tr>
+            <td>{{ol.name|upper}}</td>
+            <td><a href="/{{ol.id}}" class="btn btn-info">details</a>&nbsp&nbsp<a href="/update/{{ol.id}}" class="btn btn-primary">update</a>&nbsp&nbsp<a href="/delete/{{ol.id}}" class="btn btn-danger">delete</a></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+     </table>
+     {% else %}
+     <h2> No order available </h2>
+     {% endif %}
+     <a href="/add" class="btn btn-success">New Order</a>
+    </div>
+  {% endblock %}
